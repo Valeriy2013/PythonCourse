@@ -16,10 +16,10 @@ auth = {
 }
 
 
-def get_issue(key):    
+def get_issue(key):
     json_data = requests.get(server + data + key, auth=(user, apikey)).json()
-    #print(r.status_code)
-    #print(json_data["fields"]["summary"])
+    # print(r.status_code)
+    # print(json_data["fields"]["summary"])
     issue = {
         "status_code": requests.get(server + data + key, auth=(user, apikey)).status_code,
         "issue_summary": json_data["fields"]["summary"]
