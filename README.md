@@ -1,5 +1,4 @@
-# CalculatorLibrary
-Python Calc
+# Python Course
 
 pip install flake8 pytest pytest-cov
 pip freeze > requirements.txt
