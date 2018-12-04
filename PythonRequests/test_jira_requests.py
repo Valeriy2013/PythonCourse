@@ -16,8 +16,8 @@ class TestJiraRequests:
 
     def test_create_issue(self):
         # create an issue
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\issue_to_create.json"
-        issue_to_create = json_fixtures.get_json_data(path)
+        file = "issue_to_create.json"
+        issue_to_create = json_fixtures.get_json_data(file)
         status_code, response = jira_requests.create_issue(issue_to_create)
         assert status_code == 201
 
@@ -33,8 +33,8 @@ class TestJiraRequests:
 
     def test_delete_issue(self):
         # create issue for deletion
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\issue_to_create.json"
-        issue_to_create = json_fixtures.get_json_data(path)
+        file = "issue_to_create.json"
+        issue_to_create = json_fixtures.get_json_data(file)
         status_code, response = jira_requests.create_issue(issue_to_create)
 
         # delete issue
@@ -48,14 +48,14 @@ class TestJiraRequests:
 
     def test_update_issue(self):
         # create issue for update
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\issue_to_create.json"
-        issue_to_create = json_fixtures.get_json_data(path)
+        file = "issue_to_create.json"
+        issue_to_create = json_fixtures.get_json_data(file)
         status_code, response = jira_requests.create_issue(issue_to_create)
 
         # update issue
         new_key = response['key']
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\issue_to_update.json"
-        issue_to_update = json_fixtures.get_json_data(path)
+        file = "issue_to_update.json"
+        issue_to_update = json_fixtures.get_json_data(file)
         upd_code = jira_requests.update_issue(new_key, issue_to_update)
         assert upd_code == 204
 
@@ -70,8 +70,8 @@ class TestJiraRequests:
 
     def test_search_issue(self):
         # create issue for search using bulk create
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\issues_to_create_for_search.json"
-        issues_to_create = json_fixtures.get_json_data(path)
+        file = "issues_to_create_for_search.json"
+        issues_to_create = json_fixtures.get_json_data(file)
         status_code, response = jira_requests.create_issue_bulk(issues_to_create)
 
         # retrieve created issues keys from response
@@ -81,8 +81,8 @@ class TestJiraRequests:
             keys.append(response["issues"][i]["key"])
 
         # search created issues
-        path = "D:\\_Projects\\PythonCourse\\PythonRequests\\jsons\\search_criteria.json"
-        search_criteria = json_fixtures.get_json_data(path)
+        file = "search_criteria.json"
+        search_criteria = json_fixtures.get_json_data(file)
         search_status_code, search_response = jira_requests.search_issue(search_criteria)
         assert search_status_code == 200
 
