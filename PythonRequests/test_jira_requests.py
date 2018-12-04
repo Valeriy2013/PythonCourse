@@ -88,5 +88,3 @@ class TestJiraRequests:
         # delete created issues
         jira_requests.delete_issue(keys[0])
         jira_requests.delete_issue(keys[1])
-
-
