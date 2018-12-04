@@ -1,0 +1,9 @@
+{
+    "jql": "project = TES and description ~ 'test bug for search'",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "description"
+    ]
+}
