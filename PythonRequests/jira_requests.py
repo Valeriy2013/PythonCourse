@@ -5,8 +5,8 @@ JiraRequests.
 import requests
 import os
 
-user = os.env("mail")
-api_key = os.env("api_key")
+user = os.getenv("mail")
+api_key = os.getenv("api_key")
 server = 'https://jira-valeriy.atlassian.net'
 issue_endpoint = '/rest/api/2/issue'
 search_endpoint = '/rest/api/2/search'
