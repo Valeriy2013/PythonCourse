@@ -11,4 +11,4 @@ def get_json_data(file):
 
 def get_full_path(file):
     my_path = os.path.abspath(os.path.dirname(__file__))
-    return os.path.join(my_path, "../PythonRequests/jsons/" + file)
+    return os.path.join(my_path, "../PythonRequests/DataProvider/" + file)
