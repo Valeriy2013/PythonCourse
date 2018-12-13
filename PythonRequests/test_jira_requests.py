@@ -2,8 +2,8 @@
 JiraRequests tests.
 """
 
-from PythonRequests import json_fixtures
-from PythonRequests import jira_requests
+from PythonRequests.json_fixtures import json_fixtures
+from PythonRequests.jira_requests import jira_requests
 
 
 class TestJiraRequests:

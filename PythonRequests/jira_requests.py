@@ -3,6 +3,8 @@ JiraRequests.
 """
 
 import requests
+from PythonRequests.Constants import credentials
+from PythonRequests.Constants import endpoints
 
 
 def get_issue_by_id(key, fields='*all'):
